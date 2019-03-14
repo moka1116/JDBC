@@ -3,7 +3,7 @@ import java.sql.*;
 
 class DataAccess {
     static final String DB_URL = "jdbc:h2:~/test";
-    private String password = "lachesis16";
+    private String password = "-";
     private Connection connection = null;
 
 
