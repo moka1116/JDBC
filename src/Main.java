@@ -11,6 +11,8 @@ public class Main {
                 " age INTEGER, " +
                 " PRIMARY KEY ( id ))");
         con.dropTable("Drop table Customers");
+        con.insert("Insert into EVENTS Values(3,22,3250,'Boston','BBCH')");
+        con.update("UPDATE EVENTS SET PRICE = 5000 WHERE ID = 2");
         con.close();
 
 
