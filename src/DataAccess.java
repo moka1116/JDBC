@@ -1,9 +1,10 @@
+import java.security.spec.ECField;
 import java.sql.*;
 
 
 class DataAccess {
     static final String DB_URL = "jdbc:h2:~/test";
-    private String password = "";
+    private String password = "lachesis16";
     private Connection connection = null;
 
 
@@ -52,14 +53,21 @@ class DataAccess {
         }
     }
 
-    void insert() {
-
+    void insert(String querry) {
+        System.out.println("Trying to insert data");
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(querry);
+            System.out.println("\u001B[32m" + "Table Droped successful!" + "\u001B[0m");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     void dropTable(String querry) {
         System.out.println("Trying to drop table...");
         try {
-            Statement statement= connection.createStatement();
+            Statement statement = connection.createStatement();
             statement.executeUpdate(querry);
 
             System.out.println("\u001B[32m" + "Table Droped successful!" + "\u001B[0m");
@@ -78,13 +86,21 @@ class DataAccess {
             System.out.println("\u001B[32m" + "Successful! " + "\u001B[0m");
 
         } catch (Exception e) {
-            System.err.println(e);
             e.printStackTrace();
         }
 
     }
 
-    void update() {
+    void update(String querry) {
+        System.out.println("Trying to update table...");
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(querry);
+            System.out.println("\u001B[32m" + "Table updated Successful! " + "\u001B[0m");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
