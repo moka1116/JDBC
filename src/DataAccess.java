@@ -53,7 +53,7 @@ class DataAccess {
     }
 
     void insert(String querry) {
-        System.out.println("Trying to insert data");
+        System.out.println("Trying to insert data...");
         try {
             Statement statement = connection.createStatement();
             statement.executeUpdate(querry);
